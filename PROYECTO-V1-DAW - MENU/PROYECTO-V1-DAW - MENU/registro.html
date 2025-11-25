@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro - Sistema de Gestión de Inventario y Pedidos</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body class="login-page">
+    <div class="login-container" style="max-width: 500px;">
+        <div class="logo-section">
+            <i class="bi bi-person-plus" style="font-size: 48px; color: var(--color-primary);"></i>
+            <h1>CREAR CUENTA</h1>
+            <p>Completa el formulario para registrarte</p>
+        </div>
+
+        <form action="login.html" method="get">
+            <div class="form-group">
+                <label for="nombre"><i class="bi bi-person"></i> Nombre Completo</label>
+                <input type="text" id="nombre" name="nombre" required placeholder="Tu nombre completo">
+            </div>
+
+            <div class="form-group">
+                <label for="email"><i class="bi bi-envelope"></i> Correo Electrónico</label>
+                <input type="email" id="email" name="email" required placeholder="ejemplo@correo.com">
+            </div>
+
+            <div class="form-group">
+                <label for="telefono"><i class="bi bi-telephone"></i> Teléfono</label>
+                <input type="tel" id="telefono" name="telefono" required placeholder="+593 99 999 9999">
+            </div>
+
+            <div class="form-group">
+                <label for="empresa"><i class="bi bi-building"></i> Empresa</label>
+                <input type="text" id="empresa" name="empresa" required placeholder="Nombre de tu empresa">
+            </div>
+
+            <div class="form-group">
+                <label for="password"><i class="bi bi-lock"></i> Contraseña</label>
+                <input type="password" id="password" name="password" required placeholder="Mínimo 8 caracteres">
+            </div>
+
+            <div class="form-group">
+                <label for="confirm-password"><i class="bi bi-lock-fill"></i> Confirmar Contraseña</label>
+                <input type="password" id="confirm-password" name="confirm-password" required placeholder="Repite tu contraseña">
+            </div>
+
+            <div class="button-group">
+                <a href="login.html" class="btn btn-secondary"><i class="bi bi-x-circle"></i> Cancelar</a>
+                <button type="submit" class="btn btn-primary"><i class="bi bi-check-circle"></i> Registrarse</button>
+            </div>
+        </form>
+
+        <div class="text-link" style="margin-top: 20px;">
+            ¿Ya tienes cuenta? <a href="login.html">Inicia sesión aquí</a>
+        </div>
+    </div>
+</body>
+</html>
