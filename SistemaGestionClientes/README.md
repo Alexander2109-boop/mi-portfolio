@@ -1,4 +1,4 @@
-# CRM Empresarial - Grupo 5 (Entrega 2 - 100% Funcional)
+# CRM Empresarial - Grupo 5 
 
 ## Cómo ejecutar el proyecto en menos de 2 minutos
 
