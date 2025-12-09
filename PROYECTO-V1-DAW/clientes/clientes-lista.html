@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Clientes - Sistema de Gestión</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="../css/estilos.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navbar-brand"><i class="bi bi-box-seam"></i> SISTEMA DE GESTIÓN</div>
+        <div class="navbar-menu">
+            <a href="../dashboard.html"><i class="bi bi-house-door"></i> <b>Inicio</b></a>
+            <a href="clientes-lista.html"><i class="bi bi-people"></i> <b>Clientes</b></a>
+            <a href="../usuarios/usuarios-lista.html"><i class="bi bi-person-badge"></i> <b>Usuarios</b></a>
+            <a href="../proveedores/proveedores-lista.html"><i class="bi bi-truck"></i> <b>Proveedores</b></a>
+            <a href="../inventario/inventario-lista.html"><i class="bi bi-box"></i> <b>Inventario</b></a>
+            <a href="../pedidos/pedidos-lista.html"><i class="bi bi-cart"></i> <b>Pedidos</b></a>
+            <a href="../login.html"><i class="bi bi-box-arrow-right"></i> <b>Cerrar Sesión</b></a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="page-header">
+            <h1><i class="bi bi-people"></i> Lista de Clientes</h1>
+            <a href="cliente-crear.html" class="btn btn-primary"><i class="bi bi-plus-circle"></i> Agregar Cliente</a>
+        </div>
+
+        <div class="search-bar">
+            <input type="text" placeholder="Buscar clientes por nombre, empresa o email...">
+        </div>
+
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Nombre</th>
+                        <th>Empresa</th>
+                        <th>Email</th>
+                        <th>Teléfono</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>001</td>
+                        <td>Carlos Mendoza</td>
+                        <td>TechSolutions S.A.</td>
+                        <td>carlos.mendoza@techsolutions.com</td>
+                        <td>+593 99 123 4567</td>
+                        <td>
+                            <div class="action-buttons">
+                                <a href="cliente-detalle.html" class="btn btn-sm btn-primary"><i class="bi bi-eye"></i> Ver</a>
+                                <a href="cliente-editar.html" class="btn btn-sm btn-warning"><i class="bi bi-pencil"></i> Editar</a>
+                                <button class="btn btn-sm btn-danger"><i class="bi bi-trash"></i> Eliminar</button>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>002</td>
+                        <td>María Rodríguez</td>
+                        <td>InnovaGroup</td>
+                        <td>maria.rodriguez@innovagroup.com</td>
+                        <td>+593 98 234 5678</td>
+                        <td>
+                            <div class="action-buttons">
+                                <a href="cliente-detalle.html" class="btn btn-sm btn-primary"><i class="bi bi-eye"></i> Ver</a>
+                                <a href="cliente-editar.html" class="btn btn-sm btn-warning"><i class="bi bi-pencil"></i> Editar</a>
+                                <button class="btn btn-sm btn-danger"><i class="bi bi-trash"></i> Eliminar</button>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>003</td>
+                        <td>Juan Pérez</td>
+                        <td>Comercial del Pacífico</td>
+                        <td>juan.perez@pacifico.com</td>
+                        <td>+593 97 345 6789</td>
+                        <td>
+                            <div class="action-buttons">
+                                <a href="cliente-detalle.html" class="btn btn-sm btn-primary"><i class="bi bi-eye"></i> Ver</a>
+                                <a href="cliente-editar.html" class="btn btn-sm btn-warning"><i class="bi bi-pencil"></i> Editar</a>
+                                <button class="btn btn-sm btn-danger"><i class="bi bi-trash"></i> Eliminar</button>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>004</td>
+                        <td>Ana Gómez</td>
+                        <td>Servicios Globales</td>
+                        <td>ana.gomez@globales.com</td>
+                        <td>+593 96 456 7890</td>
+                        <td>
+                            <div class="action-buttons">
+                                <a href="cliente-detalle.html" class="btn btn-sm btn-primary"><i class="bi bi-eye"></i> Ver</a>
+                                <a href="cliente-editar.html" class="btn btn-sm btn-warning"><i class="bi bi-pencil"></i> Editar</a>
+                                <button class="btn btn-sm btn-danger"><i class="bi bi-trash"></i> Eliminar</button>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>005</td>
+                        <td>Roberto Silva</td>
+                        <td>Distribuidora Nacional</td>
+                        <td>roberto.silva@nacional.com</td>
+                        <td>+593 95 567 8901</td>
+                        <td>
+                            <div class="action-buttons">
+                                <a href="cliente-detalle.html" class="btn btn-sm btn-primary"><i class="bi bi-eye"></i> Ver</a>
+                                <a href="cliente-editar.html" class="btn btn-sm btn-warning"><i class="bi bi-pencil"></i> Editar</a>
+                                <button class="btn btn-sm btn-danger"><i class="bi bi-trash"></i> Eliminar</button>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+</html>

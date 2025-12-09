@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Usuarios - Sistema de Gestión</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <!-- Actualizando ruta de CSS -->
+    <link rel="stylesheet" href="../css/estilos.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navbar-brand"><i class="bi bi-box-seam"></i> SISTEMA DE GESTIÓN</div>
+        <!-- Actualizando rutas de navegación -->
+        <div class="navbar-menu">
+            <a href="../dashboard.html"><i class="bi bi-house-door"></i> <b>Inicio</b></a>
+            <a href="../clientes/clientes-lista.html"><i class="bi bi-people"></i> <b>Clientes</b></a>
+            <a href="usuarios-lista.html"><i class="bi bi-person-badge"></i> <b>Usuarios</b></a>
+            <a href="../proveedores/proveedores-lista.html"><i class="bi bi-truck"></i> <b>Proveedores</b></a>
+            <a href="../inventario/inventario-lista.html"><i class="bi bi-box"></i> <b>Inventario</b></a>
+            <a href="../pedidos/pedidos-lista.html"><i class="bi bi-cart"></i> <b>Pedidos</b></a>
+            <a href="../login.html"><i class="bi bi-box-arrow-right"></i> <b>Cerrar Sesión</b></a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="page-header">
+            <h1><i class="bi bi-person-badge"></i> Lista de Usuarios</h1>
+            <a href="usuario-crear.html" class="btn btn-primary"><i class="bi bi-plus-circle"></i> Agregar Usuario</a>
+        </div>
+
+        <div class="search-bar">
+            <input type="text" placeholder="Buscar usuarios por nombre, rol o email...">
+        </div>
+
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Nombre</th>
+                        <th>Rol</th>
+                        <th>Email</th>
+                        <th>Teléfono</th>
+                        <th>Estado</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>U001</td>
+                        <td>Admin Principal</td>
+                        <td><span class="badge badge-danger">Administrador</span></td>
+                        <td>admin@sistema.com</td>
+                        <td>+593 99 111 2222</td>
+                        <td><span class="badge badge-success">Activo</span></td>
+                        <td>
+                            <div class="action-buttons">
+                                <a href="usuario-detalle.html" class="btn btn-sm btn-primary"><i class="bi bi-eye"></i> Ver</a>
+                                <a href="usuario-editar.html" class="btn btn-sm btn-warning"><i class="bi bi-pencil"></i> Editar</a>
+                                <button class="btn btn-sm btn-danger"><i class="bi bi-trash"></i> Eliminar</button>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>U002</td>
+                        <td>María López</td>
+                        <td><span class="badge badge-info">Empleado</span></td>
+                        <td>maria.lopez@sistema.com</td>
+                        <td>+593 98 222 3333</td>
+                        <td><span class="badge badge-success">Activo</span></td>
+                        <td>
+                            <div class="action-buttons">
+                                <a href="usuario-detalle.html" class="btn btn-sm btn-primary"><i class="bi bi-eye"></i> Ver</a>
+                                <a href="usuario-editar.html" class="btn btn-sm btn-warning"><i class="bi bi-pencil"></i> Editar</a>
+                                <button class="btn btn-sm btn-danger"><i class="bi bi-trash"></i> Eliminar</button>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>U003</td>
+                        <td>Carlos Gómez</td>
+                        <td><span class="badge badge-info">Empleado</span></td>
+                        <td>carlos.gomez@sistema.com</td>
+                        <td>+593 97 333 4444</td>
+                        <td><span class="badge badge-success">Activo</span></td>
+                        <td>
+                            <div class="action-buttons">
+                                <a href="usuario-detalle.html" class="btn btn-sm btn-primary"><i class="bi bi-eye"></i> Ver</a>
+                                <a href="usuario-editar.html" class="btn btn-sm btn-warning"><i class="bi bi-pencil"></i> Editar</a>
+                                <button class="btn btn-sm btn-danger"><i class="bi bi-trash"></i> Eliminar</button>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>U004</td>
+                        <td>Ana Fernández</td>
+                        <td><span class="badge badge-danger">Administrador</span></td>
+                        <td>ana.fernandez@sistema.com</td>
+                        <td>+593 96 444 5555</td>
+                        <td><span class="badge badge-warning">Inactivo</span></td>
+                        <td>
+                            <div class="action-buttons">
+                                <a href="usuario-detalle.html" class="btn btn-sm btn-primary"><i class="bi bi-eye"></i> Ver</a>
+                                <a href="usuario-editar.html" class="btn btn-sm btn-warning"><i class="bi bi-pencil"></i> Editar</a>
+                                <button class="btn btn-sm btn-danger"><i class="bi bi-trash"></i> Eliminar</button>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+</html>

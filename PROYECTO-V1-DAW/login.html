@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iniciar Sesión - Sistema de Gestión de Inventario y Pedidos</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body class="login-page">
+    <div class="login-container">
+        <div class="logo-section">
+            <i class="bi bi-box-seam" style="font-size: 48px; color: var(--color-primary);"></i>
+            <h1>SISTEMA DE GESTIÓN</h1>
+            <p>Inventario y Pedidos en Línea</p>
+        </div>
+
+        <form action="dashboard.html" method="get">
+            <div class="form-group">
+                <label for="email"><i class="bi bi-envelope"></i> Correo Electrónico</label>
+                <input type="email" id="email" name="email" required placeholder="ejemplo@correo.com">
+            </div>
+
+            <div class="form-group">
+                <label for="password"><i class="bi bi-lock"></i> Contraseña</label>
+                <input type="password" id="password" name="password" required placeholder="Ingresa tu contraseña">
+            </div>
+
+            <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 10px;">
+                <i class="bi bi-box-arrow-in-right"></i> Iniciar Sesión
+            </button>
+        </form>
+
+        <div class="divider">o</div>
+
+        <div class="text-link">
+            ¿No tienes cuenta? <a href="registro.html">Regístrate aquí</a>
+        </div>
+    </div>
+</body>
+</html>

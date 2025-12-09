@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar Cliente - Sistema de Gestión</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <!-- Actualizando ruta de CSS -->
+    <link rel="stylesheet" href="../css/estilos.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navbar-brand"><i class="bi bi-box-seam"></i> SISTEMA DE GESTIÓN</div>
+        <!-- Actualizando rutas de navegación -->
+        <div class="navbar-menu">
+            <a href="../dashboard.html"><i class="bi bi-house-door"></i> <b>Inicio</b></a>
+            <a href="clientes-lista.html"><i class="bi bi-people"></i> <b>Clientes</b></a>
+            <a href="../usuarios/usuarios-lista.html"><i class="bi bi-person-badge"></i> <b>Usuarios</b></a>
+            <a href="../proveedores/proveedores-lista.html"><i class="bi bi-truck"></i> <b>Proveedores</b></a>
+            <a href="../inventario/inventario-lista.html"><i class="bi bi-box"></i> <b>Inventario</b></a>
+            <a href="../pedidos/pedidos-lista.html"><i class="bi bi-cart"></i> <b>Pedidos</b></a>
+            <a href="../login.html"><i class="bi bi-box-arrow-right"></i> <b>Cerrar Sesión</b></a>
+        </div>
+    </nav>
+
+    <div class="container-small">
+        <!-- Actualizando breadcrumb -->
+        <div class="breadcrumb">
+            <a href="../dashboard.html">Inicio</a> / 
+            <a href="clientes-lista.html">Clientes</a> / 
+            Editar Cliente
+        </div>
+
+        <div class="card">
+            <h1><i class="bi bi-pencil-square"></i> Editar Cliente</h1>
+            <p style="color: var(--color-gray-medium); margin-bottom: 30px;">Actualice la información del cliente en el sistema</p>
+
+            <div style="background-color: var(--color-gray-light); padding: 15px; border-radius: 6px; margin-bottom: 20px;">
+                <strong style="color: var(--color-primary);">ID del Cliente:</strong> 001
+            </div>
+
+            <form action="cliente-detalle.html" method="get">
+                <div class="form-group">
+                    <label for="nombre"><i class="bi bi-person"></i> Nombre Completo <span class="required">*</span></label>
+                    <input type="text" id="nombre" name="nombre" required value="Carlos Mendoza">
+                </div>
+
+                <div class="form-group">
+                    <label for="empresa"><i class="bi bi-building"></i> Empresa <span class="required">*</span></label>
+                    <input type="text" id="empresa" name="empresa" required value="TechSolutions S.A.">
+                </div>
+
+                <div class="form-group">
+                    <label for="email"><i class="bi bi-envelope"></i> Correo Electrónico <span class="required">*</span></label>
+                    <input type="email" id="email" name="email" required value="carlos.mendoza@techsolutions.com">
+                </div>
+
+                <div class="form-group">
+                    <label for="telefono"><i class="bi bi-telephone"></i> Teléfono <span class="required">*</span></label>
+                    <input type="tel" id="telefono" name="telefono" required value="+593 99 123 4567">
+                </div>
+
+                <div class="form-group">
+                    <label for="direccion"><i class="bi bi-geo-alt"></i> Dirección</label>
+                    <input type="text" id="direccion" name="direccion" value="Av. Principal 123, Guayaquil">
+                </div>
+
+                <div class="form-group">
+                    <label for="notas"><i class="bi bi-journal-text"></i> Notas Adicionales</label>
+                    <textarea id="notas" name="notas">Cliente prioritario. Interesado en soluciones de software empresarial. Contactar preferiblemente por las mañanas.</textarea>
+                </div>
+
+                <div class="button-group">
+                    <a href="cliente-detalle.html" class="btn btn-secondary"><i class="bi bi-x-circle"></i> Cancelar</a>
+                    <button type="submit" class="btn btn-primary"><i class="bi bi-check-circle"></i> Actualizar Cliente</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

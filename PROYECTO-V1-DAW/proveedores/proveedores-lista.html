@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Proveedores - Sistema de Gestión</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <!-- Corregida ruta al CSS desde subcarpeta proveedores -->
+    <link rel="stylesheet" href="../css/estilos.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navbar-brand"><i class="bi bi-box-seam"></i> SISTEMA DE GESTIÓN</div>
+        <div class="navbar-menu">
+            <a href="../dashboard.html"><i class="bi bi-house-door"></i> <b>Inicio</b></a>
+            <a href="../clientes/clientes-lista.html"><i class="bi bi-people"></i> <b>Clientes</b></a>
+            <a href="../usuarios/usuarios-lista.html"><i class="bi bi-person-badge"></i> <b>Usuarios</b></a>
+            <a href="proveedores-lista.html"><i class="bi bi-truck"></i> <b>Proveedores</b></a>
+            <a href="../inventario/inventario-lista.html"><i class="bi bi-box"></i> <b>Inventario</b></a>
+            <a href="../pedidos/pedidos-lista.html"><i class="bi bi-cart"></i> <b>Pedidos</b></a>
+            <a href="../login.html"><i class="bi bi-box-arrow-right"></i> <b>Cerrar Sesión</b></a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="page-header">
+            <h1><i class="bi bi-truck"></i> Lista de Proveedores</h1>
+            <a href="proveedor-crear.html" class="btn btn-primary"><i class="bi bi-plus-circle"></i> Agregar Proveedor</a>
+        </div>
+
+        <div class="search-bar">
+            <input type="text" placeholder="Buscar proveedores por nombre, empresa o productos...">
+        </div>
+
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Nombre</th>
+                        <th>Empresa</th>
+                        <th>Email</th>
+                        <th>Teléfono</th>
+                        <th>Productos Suministrados</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>P001</td>
+                        <td>Luis Martínez</td>
+                        <td>Distribuidora Tech</td>
+                        <td>luis@disttech.com</td>
+                        <td>+593 99 100 2000</td>
+                        <td>Laptops, Tablets</td>
+                        <td>
+                            <div class="action-buttons">
+                                <a href="proveedor-detalle.html" class="btn btn-sm btn-primary"><i class="bi bi-eye"></i> Ver</a>
+                                <a href="proveedor-editar.html" class="btn btn-sm btn-warning"><i class="bi bi-pencil"></i> Editar</a>
+                                <button class="btn btn-sm btn-danger"><i class="bi bi-trash"></i> Eliminar</button>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>P002</td>
+                        <td>Carmen Vega</td>
+                        <td>Office Supply Co.</td>
+                        <td>carmen@officesupply.com</td>
+                        <td>+593 98 200 3000</td>
+                        <td>Papelería, Oficina</td>
+                        <td>
+                            <div class="action-buttons">
+                                <a href="proveedor-detalle.html" class="btn btn-sm btn-primary"><i class="bi bi-eye"></i> Ver</a>
+                                <a href="proveedor-editar.html" class="btn btn-sm btn-warning"><i class="bi bi-pencil"></i> Editar</a>
+                                <button class="btn btn-sm btn-danger"><i class="bi bi-trash"></i> Eliminar</button>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>P003</td>
+                        <td>Roberto Sánchez</td>
+                        <td>Electrónica Global</td>
+                        <td>roberto@electronica.com</td>
+                        <td>+593 97 300 4000</td>
+                        <td>Componentes, Cables</td>
+                        <td>
+                            <div class="action-buttons">
+                                <a href="proveedor-detalle.html" class="btn btn-sm btn-primary"><i class="bi bi-eye"></i> Ver</a>
+                                <a href="proveedor-editar.html" class="btn btn-sm btn-warning"><i class="bi bi-pencil"></i> Editar</a>
+                                <button class="btn btn-sm btn-danger"><i class="bi bi-trash"></i> Eliminar</button>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>P004</td>
+                        <td>Patricia Torres</td>
+                        <td>Muebles Express</td>
+                        <td>patricia@mueblesexpress.com</td>
+                        <td>+593 96 400 5000</td>
+                        <td>Muebles, Decoración</td>
+                        <td>
+                            <div class="action-buttons">
+                                <a href="proveedor-detalle.html" class="btn btn-sm btn-primary"><i class="bi bi-eye"></i> Ver</a>
+                                <a href="proveedor-editar.html" class="btn btn-sm btn-warning"><i class="bi bi-pencil"></i> Editar</a>
+                                <button class="btn btn-sm btn-danger"><i class="bi bi-trash"></i> Eliminar</button>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+</html>

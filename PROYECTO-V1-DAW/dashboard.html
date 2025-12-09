@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Sistema de Gestión de Inventario y Pedidos</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navbar-brand"><i class="bi bi-box-seam"></i> SISTEMA DE GESTIÓN</div>
+        <div class="navbar-menu">
+            <!-- Actualizando rutas a carpetas de módulos -->
+            <a href="dashboard.html"><i class="bi bi-house-door"></i> <b>Inicio</b></a>
+            <a href="clientes/clientes-lista.html"><i class="bi bi-people"></i> <b>Clientes</b></a>
+            <a href="usuarios/usuarios-lista.html"><i class="bi bi-person-badge"></i> <b>Usuarios</b></a>
+            <a href="proveedores/proveedores-lista.html"><i class="bi bi-truck"></i> <b>Proveedores</b></a>
+            <a href="inventario/inventario-lista.html"><i class="bi bi-box"></i> <b>Inventario</b></a>
+            <a href="pedidos/pedidos-lista.html"><i class="bi bi-cart"></i> <b>Pedidos</b></a>
+            <a href="login.html"><i class="bi bi-box-arrow-right"></i> <b>Cerrar Sesión</b></a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="page-header">
+            <div>
+                <h1>Panel de Control</h1>
+                <p>Bienvenido al Sistema de Gestión de Inventario y Pedidos en Línea</p>
+            </div>
+        </div>
+
+        <div class="stats-grid">
+            <div class="stat-card">
+                <h3><i class="bi bi-people"></i> Total Clientes</h3>
+                <div class="stat-number">24</div>
+            </div>
+
+            <div class="stat-card">
+                <h3><i class="bi bi-person-badge"></i> Usuarios Activos</h3>
+                <div class="stat-number">8</div>
+            </div>
+
+            <div class="stat-card">
+                <h3><i class="bi bi-truck"></i> Proveedores</h3>
+                <div class="stat-number">12</div>
+            </div>
+
+            <div class="stat-card">
+                <h3><i class="bi bi-box"></i> Productos en Stock</h3>
+                <div class="stat-number">156</div>
+            </div>
+
+            <div class="stat-card">
+                <h3><i class="bi bi-cart-check"></i> Pedidos Completados</h3>
+                <div class="stat-number">48</div>
+            </div>
+
+            <div class="stat-card">
+                <h3><i class="bi bi-clock-history"></i> Pedidos Pendientes</h3>
+                <div class="stat-number">15</div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2 class="section-title"><i class="bi bi-lightning"></i> Acciones Rápidas</h2>
+            <!-- Actualizando rutas de acciones rápidas -->
+            <div class="action-buttons" style="gap: 15px; flex-wrap: wrap;">
+                <a href="clientes/cliente-crear.html" class="btn btn-primary"><i class="bi bi-person-plus"></i> Agregar Cliente</a>
+                <a href="usuarios/usuario-crear.html" class="btn btn-primary"><i class="bi bi-person-add"></i> Agregar Usuario</a>
+                <a href="proveedores/proveedor-crear.html" class="btn btn-primary"><i class="bi bi-truck"></i> Agregar Proveedor</a>
+                <a href="inventario/producto-crear.html" class="btn btn-primary"><i class="bi bi-box-seam"></i> Agregar Producto</a>
+                <a href="pedidos/pedido-crear.html" class="btn btn-primary"><i class="bi bi-cart-plus"></i> Crear Pedido</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

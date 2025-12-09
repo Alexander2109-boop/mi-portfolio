@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Pedidos - Sistema de Gestión</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <!-- Corregida ruta al CSS desde subcarpeta pedidos -->
+    <link rel="stylesheet" href="../css/estilos.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navbar-brand"><i class="bi bi-box-seam"></i> SISTEMA DE GESTIÓN</div>
+        <div class="navbar-menu">
+            <a href="../dashboard.html"><i class="bi bi-house-door"></i> <b>Inicio</b></a>
+            <a href="../clientes/clientes-lista.html"><i class="bi bi-people"></i> <b>Clientes</b></a>
+            <a href="../usuarios/usuarios-lista.html"><i class="bi bi-person-badge"></i> <b>Usuarios</b></a>
+            <a href="../proveedores/proveedores-lista.html"><i class="bi bi-truck"></i> <b>Proveedores</b></a>
+            <a href="../inventario/inventario-lista.html"><i class="bi bi-box"></i> <b>Inventario</b></a>
+            <a href="pedidos-lista.html"><i class="bi bi-cart"></i> <b>Pedidos</b></a>
+            <a href="../login.html"><i class="bi bi-box-arrow-right"></i> <b>Cerrar Sesión</b></a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="page-header">
+            <h1><i class="bi bi-cart"></i> Lista de Pedidos</h1>
+            <a href="pedido-crear.html" class="btn btn-primary"><i class="bi bi-plus-circle"></i> Crear Pedido</a>
+        </div>
+
+        <div class="search-bar">
+            <input type="text" placeholder="Buscar pedidos por cliente, fecha o estado...">
+        </div>
+
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Cliente</th>
+                        <th>Fecha</th>
+                        <th>Estado</th>
+                        <th>Total</th>
+                        <th>Método de Pago</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>PED001</td>
+                        <td>Carlos Mendoza</td>
+                        <td>10/01/2025</td>
+                        <td><span class="badge badge-warning">Pendiente</span></td>
+                        <td>$2,500.00</td>
+                        <td>Transferencia</td>
+                        <td>
+                            <div class="action-buttons">
+                                <a href="pedido-detalle.html" class="btn btn-sm btn-primary"><i class="bi bi-eye"></i> Ver</a>
+                                <a href="pedido-editar.html" class="btn btn-sm btn-warning"><i class="bi bi-pencil"></i> Editar</a>
+                                <button class="btn btn-sm btn-danger"><i class="bi bi-trash"></i> Eliminar</button>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>PED002</td>
+                        <td>María Rodríguez</td>
+                        <td>09/01/2025</td>
+                        <td><span class="badge badge-info">En Proceso</span></td>
+                        <td>$1,850.00</td>
+                        <td>Tarjeta de Crédito</td>
+                        <td>
+                            <div class="action-buttons">
+                                <a href="pedido-detalle.html" class="btn btn-sm btn-primary"><i class="bi bi-eye"></i> Ver</a>
+                                <a href="pedido-editar.html" class="btn btn-sm btn-warning"><i class="bi bi-pencil"></i> Editar</a>
+                                <button class="btn btn-sm btn-danger"><i class="bi bi-trash"></i> Eliminar</button>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>PED003</td>
+                        <td>Juan Pérez</td>
+                        <td>08/01/2025</td>
+                        <td><span class="badge badge-success">Completado</span></td>
+                        <td>$3,200.00</td>
+                        <td>Efectivo</td>
+                        <td>
+                            <div class="action-buttons">
+                                <a href="pedido-detalle.html" class="btn btn-sm btn-primary"><i class="bi bi-eye"></i> Ver</a>
+                                <a href="pedido-editar.html" class="btn btn-sm btn-warning"><i class="bi bi-pencil"></i> Editar</a>
+                                <button class="btn btn-sm btn-danger"><i class="bi bi-trash"></i> Eliminar</button>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>PED004</td>
+                        <td>Ana Gómez</td>
+                        <td>07/01/2025</td>
+                        <td><span class="badge badge-danger">Cancelado</span></td>
+                        <td>$950.00</td>
+                        <td>Transferencia</td>
+                        <td>
+                            <div class="action-buttons">
+                                <a href="pedido-detalle.html" class="btn btn-sm btn-primary"><i class="bi bi-eye"></i> Ver</a>
+                                <a href="pedido-editar.html" class="btn btn-sm btn-warning"><i class="bi bi-pencil"></i> Editar</a>
+                                <button class="btn btn-sm btn-danger"><i class="bi bi-trash"></i> Eliminar</button>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>PED005</td>
+                        <td>Roberto Silva</td>
+                        <td>06/01/2025</td>
+                        <td><span class="badge badge-success">Completado</span></td>
+                        <td>$4,100.00</td>
+                        <td>Tarjeta de Crédito</td>
+                        <td>
+                            <div class="action-buttons">
+                                <a href="pedido-detalle.html" class="btn btn-sm btn-primary"><i class="bi bi-eye"></i> Ver</a>
+                                <a href="pedido-editar.html" class="btn btn-sm btn-warning"><i class="bi bi-pencil"></i> Editar</a>
+                                <button class="btn btn-sm btn-danger"><i class="bi bi-trash"></i> Eliminar</button>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+</html>
