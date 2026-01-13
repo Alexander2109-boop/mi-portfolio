@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Sistema de Gestión de Clientes</title>
+    <link rel="stylesheet" href="css/estilos.css">
+    <style>
+        /* Estilos para mensajes de excepciones */
+        .error-message {
+            display: flex;
+            align-items: start;
+            gap: 12px;
+            margin-bottom: 20px;
+            padding: 16px;
+            border-radius: 8px;
+            animation: slideDown 0.3s ease-out;
+        }
+        
+        .error-message.hidden {
+            display: none;
+        }
+        
+        .error-icon {
+            font-size: 24px;
+            flex-shrink: 0;
+        }
+        
+        .error-content h4 {
+            margin: 0 0 8px 0;
+            font-size: 16px;
+            font-weight: 600;
+        }
+        
+        .error-content p {
+            margin: 0;
+            font-size: 14px;
+            line-height: 1.5;
+        }
+        
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body class="login-page">
+    <div class="login-container">
+        <div class="login-card">
+            <h1>Sistema de Gestión de Clientes</h1>
+            <p class="subtitle">Ingresa tus credenciales</p>
+            
+            <!-- Mensaje de error con íconos para excepciones -->
+            <div id="error-message" class="error-message hidden">
+                <div class="error-icon" id="error-icon"></div>
+                <div class="error-content">
+                    <h4 id="error-title"></h4>
+                    <p id="error-text"></p>
+                </div>
+            </div>
+            
+            <form id="loginForm">
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required placeholder="usuario@ejemplo.com">
+                </div>
+                
+                <div class="form-group">
+                    <label for="password">Contraseña</label>
+                    <input type="password" id="password" name="password" required placeholder="••••••••">
+                </div>
+                
+                <button type="submit" id="submitBtn" class="btn btn-primary btn-block">Iniciar Sesión</button>
+                <button type="button" class="btn btn-secondary btn-block" onclick="location.href='registro.html'">Registrarse</button>
+            </form>
+            
+            <div class="help-text">
+                <p>Usuario de prueba: admin@sistema.com</p>
+                <p>Contraseña: admin123</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Script actualizado para manejar excepciones -->
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            const errorDiv = document.getElementById('error-message');
+            const submitBtn = document.getElementById('submitBtn');
+
+            // Limpiar mensajes previos
+            errorDiv.classList.add('hidden');
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Iniciando sesión...';
+
+            try {
+                const response = await fetch('api/login.php', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ email, password })
+                });
+
+                const result = await response.json();
+
+                if (result.success) {
+                    // Login exitoso
+                    mostrarExito();
+                    setTimeout(() => {
+                        window.location.href = 'dashboard.php';
+                    }, 1000);
+                } else {
+                    // Manejar diferentes tipos de errores según la excepción
+                    mostrarError(result);
+                }
+            } catch (error) {
+                mostrarError({
+                    tipo_error: 'ERROR_RED',
+                    message: 'Error de conexión con el servidor',
+                    detalles: 'No se pudo conectar con el servidor. Verifique su conexión.'
+                });
+            } finally {
+                submitBtn.disabled = false;
+                submitBtn.textContent = 'Iniciar Sesión';
+            }
+        });
+
+        /**
+         * Muestra mensajes de error personalizados según el tipo de excepción
+         */
+        function mostrarError(result) {
+            const errorDiv = document.getElementById('error-message');
+            const errorIcon = document.getElementById('error-icon');
+            const errorTitle = document.getElementById('error-title');
+            const errorText = document.getElementById('error-text');
+
+            // Configurar color y contenido según tipo de error
+            switch(result.tipo_error) {
+                case 'USUARIO_NO_EXISTENTE':
+                    errorDiv.style.backgroundColor = '#fee';
+                    errorDiv.style.borderColor = '#fcc';
+                    errorDiv.style.color = '#c33';
+                    errorIcon.textContent = '👤';
+                    errorTitle.textContent = 'Usuario No Existente';
+                    errorText.innerHTML = `<strong>${result.message}</strong><br><small>${result.detalles}</small>`;
+                    break;
+
+                case 'CONTRASEÑA_INCORRECTA':
+                    errorDiv.style.backgroundColor = '#ffc';
+                    errorDiv.style.borderColor = '#fc6';
+                    errorDiv.style.color = '#c60';
+                    errorIcon.textContent = '🔒';
+                    errorTitle.textContent = 'Contraseña Incorrecta';
+                    errorText.innerHTML = `<strong>Intentos restantes: ${result.intentos_restantes}</strong><br><small>${result.detalles}</small>`;
+                    break;
+
+                case 'CUENTA_BLOQUEADA':
+                    errorDiv.style.backgroundColor = '#fdd';
+                    errorDiv.style.borderColor = '#f99';
+                    errorDiv.style.color = '#900';
+                    errorIcon.textContent = '🚫';
+                    errorTitle.textContent = '¡Cuenta Bloqueada!';
+                    errorText.innerHTML = `<strong>${result.message}</strong><br><small>${result.detalles}</small>`;
+                    break;
+
+                default:
+                    errorDiv.style.backgroundColor = '#eee';
+                    errorDiv.style.borderColor = '#ccc';
+                    errorDiv.style.color = '#333';
+                    errorIcon.textContent = '⚠️';
+                    errorTitle.textContent = 'Error';
+                    errorText.innerHTML = `${result.message || 'Error desconocido'}`;
+            }
+
+            errorDiv.classList.remove('hidden');
+        }
+
+        function mostrarExito() {
+            const errorDiv = document.getElementById('error-message');
+            const errorIcon = document.getElementById('error-icon');
+            const errorTitle = document.getElementById('error-title');
+            const errorText = document.getElementById('error-text');
+
+            errorDiv.style.backgroundColor = '#dfd';
+            errorDiv.style.borderColor = '#9c9';
+            errorDiv.style.color = '#363';
+            errorIcon.textContent = '✓';
+            errorTitle.textContent = 'Éxito';
+            errorText.innerHTML = 'Inicio de sesión exitoso. Redirigiendo...';
+
+            errorDiv.classList.remove('hidden');
+        }
+    </script>
+</body>
+</html>
